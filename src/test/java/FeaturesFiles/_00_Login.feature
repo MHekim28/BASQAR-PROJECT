@@ -15,8 +15,11 @@ Feature: Login Functionality
     Examples:
       | username             | password        | message                      |
       | daulet2030@gmail.com | TechnoStudy1    | Invalid username or password |
-#      | daulet203            | TechnoStudy123@ | Invalid username or password |
-#      | daulet2030@gmail     | TechnoStudy123@ | Invalid username or password |
-#      | daulet2030@gmail.com | 123             | Invalid username or password |
+      | daulet203            | TechnoStudy123@ | Invalid username or password |
+      | daulet2030@gmail     | TechnoStudy123@ | Invalid username or password |
+      | daulet2030@gmail.com | 123             | Invalid username or password |
+
+
+    #Passed(Test gecti)     good passed(3 defa üst üste gecti)
 
 

@@ -11,6 +11,9 @@ import cucumber.api.java.en.Then;
 import java.util.List;
 
 public class _01_CountryStepDefs {
+    DialogContent dialogContent = new DialogContent();
+    FormContent formContent = new FormContent();
+
     @And("^Click to elements in the left Class$")
     public void clickToElementsInTheLeftClass(DataTable elements) {
 
@@ -22,15 +25,17 @@ public class _01_CountryStepDefs {
         }
 
     }
+
     @And("^Click to elements in the FormContent$")
     public void clickToElementsInTheFormContent(DataTable elements) {
         List<String> clickToElements = elements.asList(String.class);
 
         for (int i = 0; i < clickToElements.size(); i++) {
-
+            new Parent().waiting(500);
             new FormContent().findElementAndClickFunction(clickToElements.get(i));
         }
     }
+
     @And("^enter information in the Dialog Content$")
     public void enterInformationInTheDialogContent(DataTable elements) {
         List<List<String>> elementsNameAndValue = elements.asLists(String.class);
@@ -39,6 +44,7 @@ public class _01_CountryStepDefs {
 
             System.out.println(elementsNameAndValue.get(i).get(0));
             System.out.println(elementsNameAndValue.get(i).get(1));
+            new Parent().waiting(200);
             new DialogContent().findElementAndSendKeysFunction(elementsNameAndValue.get(i).get(0), elementsNameAndValue.get(i).get(1));
         }
     }
@@ -46,8 +52,9 @@ public class _01_CountryStepDefs {
     @Then("^Success message should be displayed$")
     public void successMessageShouldBeDisplayed() {
 
-        new FormContent().findElementAndVerifyContainsText("successMessage", "successfully");
+        new FormContent().checkTheMessage("successMessage", "successfully");
     }
+
     @And("^enter information in the FormContent$")
     public void enterInformationInTheFormContent(DataTable elements) {
         List<List<String>> elementsNameAndValue = elements.asLists(String.class);
@@ -71,11 +78,16 @@ public class _01_CountryStepDefs {
         }
     }
 
-    @Then("^Error message should be displayed$")
-    public void errorMessageShouldBeDisplayed() throws InterruptedException {
-        new FormContent().findElementAndVerifyContainsText("errorMessage", "Error");
-        new Parent().wait(3000);
+
+    @And("^Delete this Country$")
+    public void deleteThisCountry() {
+        new Parent().waiting(500);
+        formContent.findElementAndSendKeysFunction("searchInputName", "My Country_2825");
+        formContent.findElementAndSendKeysFunction("searchInputCode", "28252825");
+        formContent.findElementAndClickFunction("searchButton");
+        new Parent().waiting(500);
+        dialogContent.findElementAndClickFunction("deleteButton");
+        dialogContent.findElementAndClickFunction("yesButton");
+
     }
-
-
 }

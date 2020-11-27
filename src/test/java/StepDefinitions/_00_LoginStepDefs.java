@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Pages.FormContent;
 import Pages.LoginPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -22,7 +23,7 @@ public class _00_LoginStepDefs {
 
     @Then("^User should login successfully$")
     public void userShouldLoginSuccessfully() {
-        //Assert.assertTrue(new LoginPage().);
+        Assert.assertTrue(new FormContent().dashboardText.isDisplayed());
     }
 
 
@@ -34,9 +35,7 @@ public class _00_LoginStepDefs {
 
     @Then("^Error message \"([^\"]*)\" should be displayed$")
     public void errorMessageShouldBeDisplayed(String message)  {
-        // new Parent().wait(3000);
-        System.out.println("Text= "+new LoginPage().errorMessage.getText());
-        Assert.assertTrue(new LoginPage().errorMessage.getText().equals(message)); ;
+        new FormContent().checkTheMessage("errorAlert",message);
 
 
     }

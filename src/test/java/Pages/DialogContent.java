@@ -45,14 +45,94 @@ public class DialogContent extends Parent {
     private WebElement nameOfCountries;
 
     @FindAll({@FindBy(css = "span.mat-option-text")})
-    private List<WebElement> optionCountries;
-//
-//    @FindBy(xpath = "//ms-add-button[@fontsize='20px']/div/button")
-//   private WebElement categoryAddButton;
-//
-//    @FindBy(xpath = "(//ms-save-button/button)[2]")
-//    private WebElement categorySaveButton;
+    private List<WebElement> selectOptions;
 
+    @FindBy(xpath = "(//span[@class='mat-option-text'])[1]")
+    private WebElement option1;
+
+    @FindBy(xpath = "(//span[@class='mat-option-text'])[2]")
+    private WebElement option2;
+
+    @FindBy(xpath = "(//span[@class='mat-option-text'])[3]")
+    private WebElement option3;
+
+    @FindBy(xpath = "(//span[@class='mat-option-text'])[4]")
+    private WebElement option4;
+
+    @FindBy(xpath = "(//mat-select/div)[3]")
+    private WebElement selectSubjectCategory;
+
+    @FindBy(xpath = "(//mat-select/div)[4]")
+    private WebElement selectSubjectStyle;
+
+    @FindBy(xpath = "//ms-text-field/input")
+    private WebElement inputSalaryName;
+
+    @FindBy(xpath = "(//mat-form-field//input)[1]")
+    private WebElement slryModifDescriptionInput;
+
+    @FindBy(xpath = "(//mat-form-field//input)[2]")
+    private WebElement slryModifVariableInput;
+
+    @FindBy(xpath = "(//mat-select//div)[2]")
+    private WebElement selectModifierType;
+
+    @FindBy(xpath = "(//mat-form-field//input)[4]")
+    private WebElement slryModifPriorityInput;
+
+    @FindBy(xpath = "(//mat-form-field//input)[5]")
+    private WebElement slryModifAmountInput;
+
+    @FindBy(xpath = "(//mat-select//div)[6]")
+    private WebElement selectValueType;
+
+    @FindBy(xpath = "(//mat-form-field//input)[2]")
+    private WebElement bankAccountNameInput;
+
+    @FindBy(xpath = "(//mat-form-field//input)[3]")
+    private WebElement bankAccountIBANInput;
+
+    @FindBy(xpath = "(//mat-form-field//input)[4]")
+    private WebElement bankAccountCodeInput;
+
+    @FindBy(xpath = "//mat-select[@formcontrolname='currency']")
+    private WebElement bnkAccSelectCurrency;
+
+    @FindBy(xpath = "(//mat-form-field//input)[1]")
+    private WebElement costCenterNameInp;
+
+    @FindBy(xpath = "(//mat-form-field//input)[2]")
+    private WebElement costCenterCodeInp;
+
+    @FindBy(xpath = "//mat-select[@formcontrolname='type']")
+    private WebElement costCenterSelectType;
+
+    @FindBy(xpath = "(//mat-form-field//input)[3]")
+    private WebElement costCenterOrderNoInp;
+
+    @FindBy(xpath = "(//mat-form-field//input)[4]")
+    private WebElement costCenterSelectCode;
+
+    @FindBy(xpath = "(//mat-form-field//input)[2]")
+    private WebElement excelTempNameInput;
+
+    @FindBy(xpath = "(//mat-form-field//input)[3]")
+    private WebElement excelTempCountInput;
+
+    @FindBy(xpath = "(//mat-form-field//input)[2]")
+    private WebElement excelTempRowInput;
+
+    @FindBy(xpath = "(//mat-form-field//input)[3]")
+    private WebElement excelTempColumnInput;
+
+    @FindBy(xpath = "//span[text()='Add Version']")
+    private WebElement addVersionButton;
+
+    @FindBy(xpath = "(//mat-toolbar//button)[6]")
+    private WebElement excelDialogCloseBtn;
+
+    @FindBy(xpath = "(//div[@role='tab'])[2]")
+    private WebElement tabVersionBtn;
 
     public void findElementAndClickFunction(String elementName) {
 
@@ -83,15 +163,61 @@ public class DialogContent extends Parent {
                 myElement=nameOfCountries;
                 break;
 
-//
-//            case "categoryAddButton":
-//                myElement=categoryAddButton;
-//                break;
-//
-//            case "categorySaveButton":
-//                myElement = categorySaveButton;
-//                break;
+            case "option1":
+                myElement=option1;
+                break;
 
+            case "option2":
+                myElement=option2;
+                break;
+
+            case "option3":
+                myElement=option3;
+                break;
+
+            case "option4":
+                myElement=option4;
+                break;
+
+            case "selectSubjectCategory":
+                myElement=selectSubjectCategory;
+                break;
+
+            case "selectSubjectStyle":
+                myElement=selectSubjectStyle;
+                break;
+
+            case "selectModifierType":
+                myElement=selectModifierType;
+                break;
+
+            case "selectValueType":
+                myElement=selectValueType;
+                break;
+
+            case "bnkAccSelectCurrency":
+                myElement=bnkAccSelectCurrency;
+                break;
+
+            case "costCenterSelectCode":
+                myElement=costCenterSelectCode;
+                break;
+
+            case "costCenterSelectType":
+                myElement=costCenterSelectType;
+                break;
+
+            case "addVersionButton":
+                myElement=addVersionButton;
+                break;
+
+            case "excelDialogCloseBtn":
+                myElement=excelDialogCloseBtn;
+                break;
+
+            case "tabVersionBtn":
+                myElement=tabVersionBtn;
+                break;
 
         }
         clickFunction(myElement);
@@ -117,13 +243,73 @@ public class DialogContent extends Parent {
                 myElement = newCityNameCode;
                 break;
 
+            case "inputSalaryName":
+                myElement=inputSalaryName;
+                break;
+
+            case "slryModifDescriptionInput":
+                myElement=slryModifDescriptionInput;
+                break;
+
+            case "slryModifVariableInput":
+                myElement=slryModifVariableInput;
+                break;
+
+            case "slryModifPriorityInput":
+                myElement=slryModifPriorityInput;
+                break;
+
+            case "slryModifAmountInput":
+                myElement=slryModifAmountInput;
+                break;
+
+            case "bankAccountNameInput":
+                myElement=bankAccountNameInput;
+                break;
+
+            case "bankAccountIBANInput":
+                myElement=bankAccountIBANInput;
+                break;
+
+            case "bankAccountCodeInput":
+                myElement=bankAccountCodeInput;
+                break;
+
+            case "costCenterNameInp":
+                myElement=costCenterNameInp;
+                break;
+
+            case "costCenterCodeInp":
+                myElement=costCenterCodeInp;
+                break;
+
+            case "costCenterOrderNoInp":
+                myElement=costCenterOrderNoInp;
+                break;
+
+            case "excelTempNameInput":
+                myElement=excelTempNameInput;
+                break;
+
+            case "excelTempCountInput":
+                myElement=excelTempCountInput;
+                break;
+
+            case "excelTempRowInput":
+                myElement=excelTempRowInput;
+                break;
+
+            case "excelTempColumnInput":
+                myElement=excelTempColumnInput;
+                break;
+
         }
         sendKeysFunction(myElement, value);
     }
 
     public void select(String value) {
 
-        for (WebElement option : optionCountries) {
+        for (WebElement option : selectOptions) {
 
             if (option.getText().equals(value)) {
                 clickFunction(option);
@@ -131,16 +317,5 @@ public class DialogContent extends Parent {
             }
         }
     }
-    public void waitUntilNeed(String elementName) {
 
-        switch (elementName) {
-            case "nameOfCountries":
-                myElement = nameOfCountries;
-                break;
-
-
-        }
-
-        waitUntilVisible(myElement);
-    }
 }

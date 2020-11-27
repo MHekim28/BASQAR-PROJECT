@@ -31,7 +31,9 @@ public class LoginPage extends Parent {
         sendKeysFunction(username, usernameStr);
         sendKeysFunction(password, passwordStr);
         clickFunction(loginButton);
-        clickFunction(gotItBtn);
+
+        //clickFunction(gotItBtn);
+
 
     }
     public void goToPage(){

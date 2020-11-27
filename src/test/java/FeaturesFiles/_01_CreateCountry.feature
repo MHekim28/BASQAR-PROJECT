@@ -16,35 +16,19 @@ Feature:Create a country and Delete a country
       | addButton |
 
     And enter information in the Dialog Content
-      | inputName | My Country_1 |
-      | inputCode | 28252825     |
+      | inputName | My Country_2825 |
+      | inputCode | 28252825        |
 
     And Click to elements in the Dialog Content
       | saveButton |
 
     Then Success message should be displayed
 
-  Scenario:Delete a Country
-
-    And Click to elements in the left Class
-      | setup1Button     |
-      | parametersButton |
-      | countriesButton  |
-
-    And enter information in the FormContent
-      | searchInputName | My Country_1 |
-      | searchInputCode | 28252825     |
-
-    And Click to elements in the FormContent
-      | searchButton |
-
-    And Click to elements in the Dialog Content
-      | deleteButton |
-      | yesButton    |
+    And Delete this Country
 
     Then Success message should be displayed
 
-    # 2 passed
+   #Passed(Test gecti)     good passed(3 defa üst üste gecti)
 
 
 
