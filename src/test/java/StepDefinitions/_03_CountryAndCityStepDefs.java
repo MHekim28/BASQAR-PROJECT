@@ -14,8 +14,11 @@ public class _03_CountryAndCityStepDefs {
     LeftNav leftNav=new LeftNav();
     @When("^Create a city$")
     public void createACity() {
+        new Parent().waiting(500);
         leftNav.findElementAndClickFunction("citiesButton");
+        new Parent().waiting(500);
         formContent.findElementAndClickFunction("addButton");
+        dialogContent.elementShoulBeVisible("nameOfCountries");
         dialogContent.findElementAndClickFunction("nameOfCountries");
         new Parent().waiting(1000);
         dialogContent.select("MyLand010203");
@@ -26,6 +29,7 @@ public class _03_CountryAndCityStepDefs {
 
     @Then("^Try to delete the created country and check that it cannot be deleted\\.$")
     public void tryToDeleteTheCreatedCountryAndCheckThatItCannotBeDeleted() {
+        new Parent().waiting(500);
         leftNav.findElementAndClickFunction("countriesButton");
         formContent.findElementAndSendKeysFunction("searchInputName","MyLand010203");
         formContent.findElementAndSendKeysFunction("searchInputCode","2825");
@@ -44,6 +48,7 @@ public class _03_CountryAndCityStepDefs {
 
     @And("^delete the city first to be able to delete the country$")
     public void deleteTheCityFirstToBeAbleToDeleteTheCountry() {
+        new Parent().waiting(500);
         leftNav.findElementAndClickFunction("citiesButton");
         formContent.findElementAndSendKeysFunction("searchInputName","MeineStadt0102");
         formContent.findElementAndClickFunction("searchButton");
@@ -54,6 +59,7 @@ public class _03_CountryAndCityStepDefs {
 
     @Then("^now successfully delete the country$")
     public void nowSuccessfullyDeleteTheCountry() {
+        new Parent().waiting(500);
         leftNav.findElementAndClickFunction("countriesButton");
         formContent.findElementAndSendKeysFunction("searchInputName","MyLand010203");
         formContent.findElementAndSendKeysFunction("searchInputCode","2825");

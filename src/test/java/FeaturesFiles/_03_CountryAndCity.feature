@@ -1,10 +1,10 @@
-Feature:
+Feature:Country negative Scenario
 
   Background:
     Given Navigate to basqar
     When Enter username and password and click Login Button
     Then User should login successfully
-
+  @RegressionTest
   Scenario:Create a country. When you add a city to this country you created, the country should not be deleted.
     And Click to elements in the left Class
       | setup1Button     |
