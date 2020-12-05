@@ -1,10 +1,10 @@
-Feature:
+Feature:Create a new bank account, edit it and then delete it
 
   Background:
     Given Navigate to basqar
     When Enter username and password and click Login Button
     Then User should login successfully
-
+  @RegressionTest
   Scenario:Create a new bank account, edit it and then delete it
 
     And Click to elements in the left Class

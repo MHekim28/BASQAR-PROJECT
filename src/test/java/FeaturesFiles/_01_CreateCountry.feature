@@ -4,7 +4,7 @@ Feature:Create a country and Delete a country
     Given Navigate to basqar
     When Enter username and password and click Login Button
     Then User should login successfully
-
+  @WipTest @SmokeTest @RegressionTest
   Scenario:Create a Country
 
     And Click to elements in the left Class

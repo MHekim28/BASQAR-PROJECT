@@ -40,8 +40,8 @@ public class LoginPage extends Parent {
         driver = Driver.getDriver();
         driver.get("https://test.basqar.techno.study/");
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 }
 

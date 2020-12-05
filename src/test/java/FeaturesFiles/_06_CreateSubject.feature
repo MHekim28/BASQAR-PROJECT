@@ -1,10 +1,10 @@
-Feature:
+Feature:Create a new subject and then delete it.
 
   Background:
     Given Navigate to basqar
     When Enter username and password and click Login Button
     Then User should login successfully
-
+  @WipTest @RegressionTest
   Scenario: Create a new subject and then delete a subject
     And Click to elements in the left Class
       | education |

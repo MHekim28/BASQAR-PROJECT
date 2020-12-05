@@ -12,8 +12,8 @@ public class _11_BankAccountStepDefs {
     FormContent formContent=new FormContent();
     @Then("^Create a new bank account$")
     public void createANewBankAccount() {
-        dialogContent.findElementAndSendKeysFunction("bankAccountNameInput","Sparkasse_2825");
-        dialogContent.findElementAndSendKeysFunction("bankAccountIBANInput","DE89 3704 0044 0532 2831 00");
+        dialogContent.findElementAndSendKeysFunction("dialogInput1","Sparkasse_2825");
+        dialogContent.findElementAndSendKeysFunction("dialogInput2","DE89 3704 0044 0532 2831 00");
         dialogContent.findElementAndClickFunction("bnkAccSelectCurrency");
         dialogContent.findElementAndClickFunction("option2");
         dialogContent.findElementAndSendKeysFunction("bankAccountCodeInput","252525");
@@ -27,8 +27,8 @@ public class _11_BankAccountStepDefs {
         new Parent().waiting(500);
         formContent.findElementAndClickFunction("editButton");
         new Parent().waiting(500);
-        dialogContent.findElementAndSendKeysFunction("bankAccountNameInput","Sparkasse_2828");
-        dialogContent.findElementAndSendKeysFunction("bankAccountIBANInput","DE89 3804 0028 0532 2831 00");
+        dialogContent.findElementAndSendKeysFunction("dialogInput1","Sparkasse_2828");
+        dialogContent.findElementAndSendKeysFunction("dialogInput2","DE89 3804 0028 0532 2831 00");
         dialogContent.findElementAndClickFunction("bnkAccSelectCurrency");
         dialogContent.findElementAndClickFunction("option3");
         dialogContent.findElementAndSendKeysFunction("bankAccountCodeInput","282828");

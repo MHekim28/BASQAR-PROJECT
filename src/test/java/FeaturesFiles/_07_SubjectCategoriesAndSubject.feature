@@ -1,10 +1,10 @@
-Feature:
+Feature:Subject negative scenario
 
   Background:
     Given Navigate to basqar
     When Enter username and password and click Login Button
     Then User should login successfully
-
+  @WipTest @RegressionTest
   Scenario: Create a subject category, when you add a subject to this category, this subject category should not be deleted.
 
     And Click to elements in the left Class

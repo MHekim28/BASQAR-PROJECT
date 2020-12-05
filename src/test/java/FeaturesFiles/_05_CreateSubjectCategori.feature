@@ -1,10 +1,10 @@
-Feature:
+Feature:  Create a new Subject category and then delete it.
 
   Background:
     Given Navigate to basqar
     When Enter username and password and click Login Button
     Then User should login successfully
-
+  @RegressionTest
   Scenario: Create a new Subject category and then delete one Subject category.
 
     And Click to elements in the left Class

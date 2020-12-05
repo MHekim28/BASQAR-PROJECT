@@ -81,6 +81,18 @@ public class FormContent extends Parent {
     @FindBy(xpath = "//ms-add-button[contains(@tooltip,'FIELD.ADD')]//button")
     private WebElement excelTemplateAddBtn;
 
+    @FindBy(xpath = "//mat-form-field//input")
+    private WebElement SearchInputName2;
+
+    @FindBy(xpath = "(//mat-form-field//input)[1]")
+    private WebElement salaryConstantsName;
+
+    @FindBy(xpath = "(//mat-form-field//input)[2]")
+    private WebElement salaryConstantsKey;
+
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
+    private WebElement addButton2;
+
     public void findElementAndClickFunction(String ElementName) {
 
 
@@ -120,6 +132,10 @@ public class FormContent extends Parent {
 
             case "excelTemplateAddBtn":
                 myElement=excelTemplateAddBtn;
+                break;
+
+            case "addButton2":
+                myElement=addButton2;
                 break;
 
         }
@@ -162,6 +178,18 @@ public class FormContent extends Parent {
             case "bankAccountSearchName":
                 myElement=bankAccountSearchName;
                 break;
+
+            case "SearchInputName2":
+                myElement=SearchInputName2;
+                break;
+
+            case "salaryConstantsName":
+                myElement=salaryConstantsName;
+                break;
+
+            case "salaryConstantsKey":
+                myElement=salaryConstantsKey;
+                break;
         }
 
         sendKeysFunction(myElement, value);
@@ -194,6 +222,27 @@ public class FormContent extends Parent {
                 break;
             }
         }
+    }
+    public  void scroolToElement(String elementName) {
+
+        switch (elementName) {
+
+            case "SearchInputName2":
+                myElement=SearchInputName2;
+                break;
+
+        }
+        scrollToElement(myElement);
+    }
+    public void elementShoulBeVisible(String elementName){
+
+        switch (elementName){
+            case "addButton":
+                myElement=addButton;
+                break;
+        }
+
+        waitUntilVisible(myElement);
     }
 }
 

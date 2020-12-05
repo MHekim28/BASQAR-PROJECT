@@ -14,10 +14,10 @@ _12_CostCentersStepDefs {
     @Then("^Create a Cost Centers$")
     public void createACostCenters() {
         dialogContent.findElementAndSendKeysFunction("costCenterNameInp","Herford2825");
-        dialogContent.findElementAndSendKeysFunction("costCenterCodeInp","252525");
+        dialogContent.findElementAndSendKeysFunction("dialogInput1","252525");
         dialogContent.findElementAndClickFunction("costCenterSelectType");
         dialogContent.findElementAndClickFunction("option1");
-        dialogContent.findElementAndSendKeysFunction("costCenterOrderNoInp","11223344");
+        dialogContent.findElementAndSendKeysFunction("dialogInput2","11223344");
         dialogContent.findElementAndClickFunction("costCenterSelectCode");
         dialogContent.findElementAndClickFunction("option1");
         dialogContent.findElementAndClickFunction("saveButton");
@@ -31,10 +31,10 @@ _12_CostCentersStepDefs {
         formContent.findElementAndClickFunction("costCenterEditBtn");
         new Parent().waiting(500);
         dialogContent.findElementAndSendKeysFunction("costCenterNameInp","Herford2828");
-        dialogContent.findElementAndSendKeysFunction("costCenterCodeInp","282828");
+        dialogContent.findElementAndSendKeysFunction("dialogInput1","282828");
         dialogContent.findElementAndClickFunction("costCenterSelectType");
         dialogContent.findElementAndClickFunction("option2");
-        dialogContent.findElementAndSendKeysFunction("costCenterOrderNoInp","11223345");
+        dialogContent.findElementAndSendKeysFunction("dialogInput2","11223345");
         dialogContent.findElementAndClickFunction("costCenterSelectCode");
         dialogContent.findElementAndClickFunction("option2");
         dialogContent.findElementAndClickFunction("saveButton");

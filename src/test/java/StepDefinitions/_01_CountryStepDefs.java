@@ -19,8 +19,8 @@ public class _01_CountryStepDefs {
 
         List<String> clickToElements = elements.asList(String.class);
         for (int i = 0; i < clickToElements.size(); i++) {
-            System.out.println(clickToElements.get(i));
             new LeftNav().findElementAndClickFunction(clickToElements.get(i));
+            new Parent().waiting(500);
 
         }
 
@@ -42,9 +42,6 @@ public class _01_CountryStepDefs {
 
         for (int i = 0; i < elementsNameAndValue.size(); i++) {
 
-            System.out.println(elementsNameAndValue.get(i).get(0));
-            System.out.println(elementsNameAndValue.get(i).get(1));
-            new Parent().waiting(200);
             new DialogContent().findElementAndSendKeysFunction(elementsNameAndValue.get(i).get(0), elementsNameAndValue.get(i).get(1));
         }
     }
@@ -63,6 +60,7 @@ public class _01_CountryStepDefs {
 
             System.out.println(elementsNameAndValue.get(i).get(0));
             System.out.println(elementsNameAndValue.get(i).get(1));
+            new Parent().waiting(200);
             new FormContent().findElementAndSendKeysFunction(elementsNameAndValue.get(i).get(0), elementsNameAndValue.get(i).get(1));
         }
     }

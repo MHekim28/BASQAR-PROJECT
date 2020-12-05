@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
+import java.util.Random;
 
 public class DialogContent extends Parent {
     WebElement myElement;
@@ -72,7 +73,7 @@ public class DialogContent extends Parent {
     private WebElement slryModifDescriptionInput;
 
     @FindBy(xpath = "(//mat-form-field//input)[2]")
-    private WebElement slryModifVariableInput;
+    private WebElement dialogInput1;
 
     @FindBy(xpath = "(//mat-select//div)[2]")
     private WebElement selectModifierType;
@@ -86,11 +87,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//mat-select//div)[6]")
     private WebElement selectValueType;
 
-    @FindBy(xpath = "(//mat-form-field//input)[2]")
-    private WebElement bankAccountNameInput;
-
     @FindBy(xpath = "(//mat-form-field//input)[3]")
-    private WebElement bankAccountIBANInput;
+    private WebElement dialogInput2;
 
     @FindBy(xpath = "(//mat-form-field//input)[4]")
     private WebElement bankAccountCodeInput;
@@ -101,29 +99,11 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//mat-form-field//input)[1]")
     private WebElement costCenterNameInp;
 
-    @FindBy(xpath = "(//mat-form-field//input)[2]")
-    private WebElement costCenterCodeInp;
-
     @FindBy(xpath = "//mat-select[@formcontrolname='type']")
     private WebElement costCenterSelectType;
 
-    @FindBy(xpath = "(//mat-form-field//input)[3]")
-    private WebElement costCenterOrderNoInp;
-
     @FindBy(xpath = "(//mat-form-field//input)[4]")
     private WebElement costCenterSelectCode;
-
-    @FindBy(xpath = "(//mat-form-field//input)[2]")
-    private WebElement excelTempNameInput;
-
-    @FindBy(xpath = "(//mat-form-field//input)[3]")
-    private WebElement excelTempCountInput;
-
-    @FindBy(xpath = "(//mat-form-field//input)[2]")
-    private WebElement excelTempRowInput;
-
-    @FindBy(xpath = "(//mat-form-field//input)[3]")
-    private WebElement excelTempColumnInput;
 
     @FindBy(xpath = "//span[text()='Add Version']")
     private WebElement addVersionButton;
@@ -133,6 +113,31 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "(//div[@role='tab'])[2]")
     private WebElement tabVersionBtn;
+
+    @FindBy(xpath = "//mat-icon[text()='cancel']")
+    private WebElement cancelButton;
+
+    @FindBy(xpath = "//div[@class='mat-chip-list-wrapper']")
+    private WebElement selectUserType;
+
+    @FindBy(xpath = "(//mat-form-field//input)[3]")
+    private WebElement salaryConstName;
+
+    @FindBy(xpath = "//mat-form-field//button")
+    private WebElement salaryConstValidBtn;
+
+    @FindBy(xpath = "(//mat-form-field//input)[6]")
+    private WebElement salaryConstKey;
+
+    @FindBy(xpath = "(//mat-form-field//input)[7]")
+    private WebElement salaryConstValue;
+
+    @FindAll({@FindBy(xpath = "//mat-month-view//td")})
+    private List<WebElement> selectDays;
+
+
+
+
 
     public void findElementAndClickFunction(String elementName) {
 
@@ -219,6 +224,21 @@ public class DialogContent extends Parent {
                 myElement=tabVersionBtn;
                 break;
 
+            case "dialogInput2":
+                myElement=dialogInput2;
+
+            case "cancelButton":
+                myElement=cancelButton;
+                break;
+
+            case "selectUserType":
+                myElement=selectUserType;
+                break;
+
+            case "salaryConstValidBtn":
+                myElement=salaryConstValidBtn;
+                break;
+
         }
         clickFunction(myElement);
     }
@@ -251,8 +271,8 @@ public class DialogContent extends Parent {
                 myElement=slryModifDescriptionInput;
                 break;
 
-            case "slryModifVariableInput":
-                myElement=slryModifVariableInput;
+            case "dialogInput1":
+                myElement=dialogInput1;
                 break;
 
             case "slryModifPriorityInput":
@@ -263,12 +283,8 @@ public class DialogContent extends Parent {
                 myElement=slryModifAmountInput;
                 break;
 
-            case "bankAccountNameInput":
-                myElement=bankAccountNameInput;
-                break;
-
-            case "bankAccountIBANInput":
-                myElement=bankAccountIBANInput;
+            case "dialogInput2":
+                myElement=dialogInput2;
                 break;
 
             case "bankAccountCodeInput":
@@ -279,28 +295,17 @@ public class DialogContent extends Parent {
                 myElement=costCenterNameInp;
                 break;
 
-            case "costCenterCodeInp":
-                myElement=costCenterCodeInp;
+            case "salaryConstName":
+                myElement=salaryConstName;
                 break;
 
-            case "costCenterOrderNoInp":
-                myElement=costCenterOrderNoInp;
+
+            case "salaryConstKey":
+                myElement=salaryConstKey;
                 break;
 
-            case "excelTempNameInput":
-                myElement=excelTempNameInput;
-                break;
-
-            case "excelTempCountInput":
-                myElement=excelTempCountInput;
-                break;
-
-            case "excelTempRowInput":
-                myElement=excelTempRowInput;
-                break;
-
-            case "excelTempColumnInput":
-                myElement=excelTempColumnInput;
+            case "salaryConstValue":
+                myElement=salaryConstValue;
                 break;
 
         }
@@ -317,5 +322,20 @@ public class DialogContent extends Parent {
             }
         }
     }
+    public void selectDay() {
+        Random random=new Random();
+        int number=random.nextInt(33)+3;
+        clickFunction(selectDays.get(number));
 
-}
+            }
+    public void elementShoulBeVisible(String elementName){
+
+        switch (elementName){
+            case "nameOfCountries":
+                myElement=nameOfCountries;
+                break;
+        }
+
+        waitUntilVisible(myElement);
+    }
+        }
